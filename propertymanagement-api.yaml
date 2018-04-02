@@ -1,0 +1,40 @@
+swagger: '2.0'
+
+# metadata
+info:
+  version: "0.0.1"
+  title: Property Management Api
+
+paths:
+  # This is the property endpoint
+  /property:
+    # GET HTTP operation
+    get:
+      # Gets a list of Properties (for the logged in user)
+      description: |
+        Gets `Property` objects.
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        200:
+          description: Successful response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Property"
+definitions:
+  Property:
+    type: object
+    properties:
+      name:
+        type: string
+      address:
+         $ref: "#/definitions/Address"
+  Address:
+    type: object
+    properties:
+      address1:
+        type: string
+      address2:
+        type: string
+                  
