@@ -26,15 +26,33 @@ definitions:
   Property:
     type: object
     properties:
+      id:
+        type: string
+        description: Unique Guid to identify a `Property`
       name:
         type: string
+      description:
+        type: string
+        description: The `description` of the `property`
+      numberOfRooms:
+        type: integer
+      pricePerMonth:
+        type: number
       address:
          $ref: "#/definitions/Address"
   Address:
     type: object
     properties:
+      id:
+        type: string
+        description: Unique Guid to idientify an `Address`
       address1:
         type: string
       address2:
         type: string
-                  
+      city:
+        type: string
+      province:
+        type: string
+      postCode: 
+        type: string
